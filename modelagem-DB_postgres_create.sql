@@ -22,12 +22,13 @@ CREATE TABLE "public.usuario" (
 );
 
 
+CREATE TYPE "tamanhos" AS ENUM ('P','M','G');
 
 CREATE TABLE "public.categorias" (
 	"id" serial NOT NULL,
 	"nome" TEXT NOT NULL UNIQUE,
 	"fotosId" integer NOT NULL,
-	"tamanhos" varchar(1) NOT NULL,
+	type "tamanhos" NOT NULL,
 	CONSTRAINT "categorias_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
